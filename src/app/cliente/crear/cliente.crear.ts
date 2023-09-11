@@ -43,5 +43,6 @@ export class ClienteCrear implements OnInit {
     }
 
     localStorage.setItem('usuario',JSON.stringify(usuario));
+    this.navCtrl.navigateRoot('LoginClientes');
   }
 }
