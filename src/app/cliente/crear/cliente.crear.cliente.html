@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>Registro</ion-title>
+      <ion-buttons slot="start">                <!--estas 3 lineas son para que se vea la burgir del menu-->
+        <ion-menu-button></ion-menu-button>     <!--estas 3 lineas son para que se vea la burgir del menu-->
+      </ion-buttons>                            <!--estas 3 lineas son para que se vea la burgir del menu-->
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">Registro</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title style="text-align: center;">
+                Registro
+            </ion-card-title>
+        </ion-card-header>
+        <hr>
+        <ion-card-content>
+            <form [formGroup]="formularioRegistro">
+                <ion-item>
+                    <ion-label position="floating">Nombre</ion-label>
+                    <ion-input formControlName="nombre"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Correo</ion-label>
+                    <ion-input formControlName="email"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Contraseña</ion-label>
+                    <ion-input formControlName="password" type="password"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Confirmar Contraseña</ion-label>
+                    <ion-input formControlName="password" type="password"></ion-input>
+                </ion-item>
+            </form>
+            <div>
+              <ion-button (click)="guardar()" expand="block">registrarce</ion-button>
+            </div>
+        </ion-card-content>
+      </ion-card>
+</ion-content>
