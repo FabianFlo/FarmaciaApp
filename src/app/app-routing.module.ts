@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+
 const routes: Routes = [
   {
     path: '',
@@ -26,7 +27,13 @@ const routes: Routes = [
   {
     path: 'ejemplo',
     loadChildren: () => import('./ejemplo/ejemplo.module').then( m => m.EjemploPageModule)
-  }
+  },
+  {
+    path: 'listar',
+    loadChildren: () => import('./cliente/listar/listar.module').then( m => m.ListarPageModule)
+  },
+  
+ 
 ];
 
 @NgModule({
