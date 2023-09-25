@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../auth.service';  // Asegúrate de ajustar la ruta si es necesario
+import { AlertController, NavController } from '@ionic/angular';
 // @ts-ignore
 export interface DocumentSnapshotExists<T> extends firebase.firestore.DocumentSnapshot {
   // ...
@@ -20,7 +21,10 @@ export class ClienteCrear implements OnInit {
   // Mensaje de error
   errorMessage: string = '';
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService,
+              public navCtrl: NavController,
+              public alertController: AlertController
+    ) { }
 
   ngOnInit(): void {
     // Código que quieres que se ejecute al inicializar la página
@@ -30,8 +34,21 @@ export class ClienteCrear implements OnInit {
   async register() {
     const result = await this.authService.signUp(this.email, this.password);
     if (result !== true) {
-        this.errorMessage = result;
+      const alert = await this.alertController.create({
+        header: 'Datos incompletos',
+        message: 'Falta llenar campos',
+        buttons: ['Aceptar']
+      });
+      await alert.present();
+      this.errorMessage = result;
+
     } else {
+      const alert = await this.alertController.create({
+        header: 'Bienvenidos',
+        message: 'disfrute la App',
+        buttons: ['Aceptar']
+      });
+      await alert.present();
     }
 }
 }
