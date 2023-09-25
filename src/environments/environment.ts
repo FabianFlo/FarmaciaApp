@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig : {
+    apiKey: "AIzaSyAIWAsftk4I83j8Q3LQzaDl418cShv5oAo",
+    authDomain: "farmaciaapp-4f511.firebaseapp.com",
+    projectId: "farmaciaapp-4f511",
+    storageBucket: "farmaciaapp-4f511.appspot.com",
+    messagingSenderId: "986133242264",
+    appId: "1:986133242264:web:31c737b65e332f2f760bed",
+    measurementId: "G-VCB35P3J8L"
+  }
 };
 
 /*
@@ -14,3 +23,22 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+
+// Import the functions you need from the SDKs you need
+
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAIWAsftk4I83j8Q3LQzaDl418cShv5oAo",
+  authDomain: "farmaciaapp-4f511.firebaseapp.com",
+  projectId: "farmaciaapp-4f511",
+  storageBucket: "farmaciaapp-4f511.appspot.com",
+  messagingSenderId: "986133242264",
+  appId: "1:986133242264:web:31c737b65e332f2f760bed",
+  measurementId: "G-VCB35P3J8L"
+};
+
+// Initialize Firebase
